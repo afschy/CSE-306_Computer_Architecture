@@ -12,22 +12,22 @@
 // alu_op: add = 0, sub = 1, and = 2, or = 3, nor = 4, shift_left = 5, shift_right = 6
 // reg_dst, alu_src, mem_to_reg, reg_write, mem_read, mem_write, branch_eq, branch_neq, jump, alu_op[3]
 uint16_t control_rom[16] = {
-	0b110000010001,		// bneq
-	0b110100000010,		// andi
+	0b010000010001,		// bneq
+	0b010100000010,		// andi
 	0b000000001000,		// j
-	0b110100000110,		// srl
-	0b111110000000,		// lw
-	0b110100000011,		// ori
-	0b000100000100,		// nor
-	0b000100000011,		// or
-	0b110100000000,		// addi
-	0b110100000001,		// subi
-	0b000100000001,		// sub
-	0b110001000000,		// sw
-	0b000100000000,		// add
-	0b000100000010,		// and
-	0b110100000101,		// sll
-	0b110000100001		// beq
+	0b010100000110,		// srl
+	0b011110000000,		// lw
+	0b010100000011,		// ori
+	0b100100000100,		// nor
+	0b100100000011,		// or
+	0b010100000000,		// addi
+	0b010100000001,		// subi
+	0b100100000001,		// sub
+	0b010001000000,		// sw
+	0b100100000000,		// add
+	0b100100000010,		// and
+	0b010100000101,		// sll
+	0b010000100001		// beq
 };
 
 int main(void)
@@ -45,11 +45,12 @@ int main(void)
 	
 	while (1)
 	{
-		if (opcode == (0x0F & PINA)) continue;
-		opcode = (0x0F & PINA);
-		PORTA = control_rom[opcode];
-		PORTC = (control_rom[opcode] >> 8);
-		_delay_ms(50);
+		if (opcode != (0x0F & PINB)){
+			opcode = (0x0F & PINB);
+			PORTA = control_rom[opcode];
+			PORTC = (control_rom[opcode] >> 8);
+			_delay_ms(50);	
+		}
 	}
 }
 

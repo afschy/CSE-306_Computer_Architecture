@@ -80,7 +80,7 @@ Disassembly of section .text:
   7e:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
 
 00000082 <main>:
-	0b110000100001		// beq
+	0b010000100001		// beq
 };
 
 int main(void)
@@ -107,19 +107,19 @@ int main(void)
 	
 	while (1)
 	{
-		if (opcode == (0x0F & PINA)) continue;
+		if (opcode != (0x0F & PINB)){
   94:	24 2f       	mov	r18, r20
   96:	30 e0       	ldi	r19, 0x00	; 0
-  98:	89 b3       	in	r24, 0x19	; 25
+  98:	86 b3       	in	r24, 0x16	; 22
   9a:	8f 70       	andi	r24, 0x0F	; 15
   9c:	90 e0       	ldi	r25, 0x00	; 0
   9e:	28 17       	cp	r18, r24
   a0:	39 07       	cpc	r19, r25
   a2:	c1 f3       	breq	.-16     	; 0x94 <main+0x12>
-		opcode = (0x0F & PINA);
-  a4:	49 b3       	in	r20, 0x19	; 25
+			opcode = (0x0F & PINB);
+  a4:	46 b3       	in	r20, 0x16	; 22
   a6:	4f 70       	andi	r20, 0x0F	; 15
-		PORTA = control_rom[opcode];
+			PORTA = control_rom[opcode];
   a8:	e4 2f       	mov	r30, r20
   aa:	f0 e0       	ldi	r31, 0x00	; 0
   ac:	ee 0f       	add	r30, r30
@@ -128,7 +128,7 @@ int main(void)
   b2:	ff 4f       	sbci	r31, 0xFF	; 255
   b4:	80 81       	ld	r24, Z
   b6:	8b bb       	out	0x1b, r24	; 27
-		PORTC = (control_rom[opcode] >> 8);
+			PORTC = (control_rom[opcode] >> 8);
   b8:	81 81       	ldd	r24, Z+1	; 0x01
   ba:	85 bb       	out	0x15, r24	; 21
 	#else
