@@ -5,27 +5,27 @@ Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
   0 .text         00000110  00000000  00000000  00000074  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  1 .data         00000006  00800060  00000110  00000184  2**0
+  1 .data         00000010  00800060  00000110  00000184  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  2 .comment      00000030  00000000  00000000  0000018a  2**0
+  2 .comment      00000030  00000000  00000000  00000194  2**0
                   CONTENTS, READONLY
-  3 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  000001bc  2**2
+  3 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  000001c4  2**2
                   CONTENTS, READONLY
-  4 .debug_aranges 00000028  00000000  00000000  000001f8  2**0
+  4 .debug_aranges 00000028  00000000  00000000  00000200  2**0
                   CONTENTS, READONLY, DEBUGGING
-  5 .debug_info   000006ec  00000000  00000000  00000220  2**0
+  5 .debug_info   000006ec  00000000  00000000  00000228  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_abbrev 00000606  00000000  00000000  0000090c  2**0
+  6 .debug_abbrev 00000606  00000000  00000000  00000914  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_line   000002b8  00000000  00000000  00000f12  2**0
+  7 .debug_line   000002b8  00000000  00000000  00000f1a  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_frame  00000034  00000000  00000000  000011cc  2**2
+  8 .debug_frame  00000034  00000000  00000000  000011d4  2**2
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_str    000003cc  00000000  00000000  00001200  2**0
+  9 .debug_str    000003cc  00000000  00000000  00001208  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_loc    000000c0  00000000  00000000  000015cc  2**0
+ 10 .debug_loc    000000c0  00000000  00000000  000015d4  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_ranges 00000030  00000000  00000000  0000168c  2**0
+ 11 .debug_ranges 00000030  00000000  00000000  00001694  2**0
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -70,7 +70,7 @@ Disassembly of section .text:
   6a:	02 c0       	rjmp	.+4      	; 0x70 <__do_copy_data+0x10>
   6c:	05 90       	lpm	r0, Z+
   6e:	0d 92       	st	X+, r0
-  70:	a6 36       	cpi	r26, 0x66	; 102
+  70:	a0 37       	cpi	r26, 0x70	; 112
   72:	b1 07       	cpc	r27, r17
   74:	d9 f7       	brne	.-10     	; 0x6c <__do_copy_data+0xc>
   76:	0e 94 67 00 	call	0xce	; 0xce <main>
@@ -150,7 +150,7 @@ uint8_t reverse_bits(uint8_t num) {
   cc:	08 95       	ret
 
 000000ce <main>:
-	0x8015, 0x9122, 0xc213
+	0x8060, 0x8015, 0x8027, 0xb613, 0xb624, 0x4633, 0x4644, 0xc345
 };
 
 int main(void)

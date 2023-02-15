@@ -12,7 +12,7 @@
 // alu_op: add = 0, sub = 1, and = 2, or = 3, nor = 4, shift_left = 5, shift_right = 6
 // reg_dst, alu_src, mem_to_reg, reg_write, mem_read, mem_write, branch_eq, branch_neq, jump, alu_op[3]
 uint16_t control_rom[16] = {
-	0b010000010001,		// bneq
+	0b000000010001,		// bneq
 	0b010100000010,		// andi
 	0b000000001000,		// j
 	0b010100000110,		// srl
@@ -27,7 +27,7 @@ uint16_t control_rom[16] = {
 	0b100100000000,		// add
 	0b100100000010,		// and
 	0b010100000101,		// sll
-	0b010000100001		// beq
+	0b000000100001		// beq
 };
 
 int main(void)

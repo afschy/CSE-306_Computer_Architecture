@@ -24,6 +24,7 @@ void tokenize(const string& str, vector<string>& tokenList) {
 
 inline uint8_t convert_register(string reg) {
     if(reg == "$zero") return 0;
+    if(reg == "$sp") return 6;
     return reg[2] - '0' + 1;
 }
 
@@ -44,6 +45,7 @@ uint8_t get_opcode(string op) {
     if(op == "and") return 13;  // E
     if(op == "sll") return 14;  // I
     if(op == "beq") return 15;  // N
+    return -1;
 }
 
 inline bool is_r_format(string op) {

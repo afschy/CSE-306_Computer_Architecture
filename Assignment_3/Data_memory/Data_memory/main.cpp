@@ -41,12 +41,10 @@ int main(void)
 		if (current_control_input & RESET_) {
 			memory_reset();
 			_delay_ms(100);
-			} else if ((last_control_input ^ current_control_input) & CLK_) {			// EDGE
-			if (last_control_input & CLK_) {						// NEG-EDGE - for writing
-				if (last_control_input & MEM_WRITE_) {
-					MEMORY[last_write_data_address & 0xF] = (last_write_data_address >> 4);
-				}
-			}
+		}
+		else if ((last_control_input ^ current_control_input) & CLK_) {			// EDGE
+			if (last_control_input & CLK_ && last_control_input & MEM_WRITE_)	// NEG-EDGE - for writing
+				MEMORY[last_write_data_address & 0xF] = (last_write_data_address >> 4);
 			_delay_ms(100);
 		}
 		if (current_control_input & MEM_READ_) {
