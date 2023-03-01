@@ -5,9 +5,9 @@ Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
   0 .text         00000110  00000000  00000000  00000074  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  1 .data         00000010  00800060  00000110  00000184  2**0
+  1 .data         0000000e  00800060  00000110  00000184  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  2 .comment      00000030  00000000  00000000  00000194  2**0
+  2 .comment      00000030  00000000  00000000  00000192  2**0
                   CONTENTS, READONLY
   3 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  000001c4  2**2
                   CONTENTS, READONLY
@@ -70,7 +70,7 @@ Disassembly of section .text:
   6a:	02 c0       	rjmp	.+4      	; 0x70 <__do_copy_data+0x10>
   6c:	05 90       	lpm	r0, Z+
   6e:	0d 92       	st	X+, r0
-  70:	a0 37       	cpi	r26, 0x70	; 112
+  70:	ae 36       	cpi	r26, 0x6E	; 110
   72:	b1 07       	cpc	r27, r17
   74:	d9 f7       	brne	.-10     	; 0x6c <__do_copy_data+0xc>
   76:	0e 94 67 00 	call	0xce	; 0xce <main>
@@ -150,7 +150,7 @@ uint8_t reverse_bits(uint8_t num) {
   cc:	08 95       	ret
 
 000000ce <main>:
-	0x8060, 0x8015, 0x8027, 0xb613, 0xb624, 0x4633, 0x4644, 0xc345
+
 };
 
 int main(void)
@@ -169,6 +169,9 @@ int main(void)
   d8:	8a bb       	out	0x1a, r24	; 26
 	DDRC = 0xff;
   da:	84 bb       	out	0x14, r24	; 20
+	
+	// D[0] - Stack Toggle
+	// DDRD = 0xff;
 	
 	uint8_t pc = -1, top_8_bits, bottom_8_bits;
   dc:	cf ef       	ldi	r28, 0xFF	; 255

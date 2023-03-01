@@ -1,26 +1,26 @@
 <?xml version='1.0' encoding='UTF-8' standalone='yes'?>
 <WORKSPACE>
  <FRAME activewindow="0">
-  <PLACEMENT>2c00000002000000030000000083ffff0083ffffffffffffffffffffb20000000c000000ce060000fa030000</PLACEMENT>
+  <PLACEMENT>2c0000000200000003000000ffffffffffffffffffffffffffffffffb20000000c000000ce060000fa030000</PLACEMENT>
   <WINDOW type="default" module="ISIS">
-   <editor metric="0" gridmajor="25400000" mode="00000000" zoom="-1" scale="58" flipped="0" gridminor="508000" gridmode="0" snapidx="2" snap="254000" xcursor="0" orgmode="0" snaprange="218965">
-    <world y1="-26670000" x1="-40640000" y2="26670000" x2="40640000"/>
-    <centre x="-21082000" y="-2505269"/>
+   <editor metric="0" gridmajor="25400000" mode="00000000" zoom="-1" scale="69" flipped="0" gridminor="508000" gridmode="0" snapidx="2" snap="254000" xcursor="0" orgmode="0" snaprange="184057">
+    <world y1="-20320000" x1="-30480000" y2="20320000" x2="30480000"/>
+    <centre x="-4318000" y="-1524000"/>
     <origin x="0" y="0"/>
    </editor>
   </WINDOW>
  </FRAME>
  <MODULE name="ARES">
-  <editor metric="0" gridmajor="0" mode="00000000" zoom="10" scale="10" flipped="0" gridminor="0" gridmode="32" snapidx="3" snap="0" xcursor="0" orgmode="0" snaprange="0">
+  <editor metric="1" gridmajor="10000000" mode="00000000" zoom="-1" scale="48" flipped="0" gridminor="500000" gridmode="32" snapidx="3" snap="250000" xcursor="0" orgmode="0" snaprange="264583">
    <world y1="-12700000" x1="-15240000" y2="12700000" x2="15240000"/>
-   <centre x="0" y="0"/>
+   <centre x="-1000000" y="-500000"/>
    <origin x="0" y="0"/>
   </editor>
  </MODULE>
  <MODULE name="ISIS">
-  <editor metric="0" gridmajor="25400000" mode="00000000" zoom="-1" scale="58" flipped="0" gridminor="508000" gridmode="0" snapidx="2" snap="254000" xcursor="0" orgmode="0" snaprange="218965">
-   <world y1="-26670000" x1="-40640000" y2="26670000" x2="40640000"/>
-   <centre x="-21082000" y="-2505269"/>
+  <editor metric="0" gridmajor="25400000" mode="00000000" zoom="-1" scale="69" flipped="0" gridminor="508000" gridmode="0" snapidx="2" snap="254000" xcursor="0" orgmode="0" snaprange="184057">
+   <world y1="-20320000" x1="-30480000" y2="20320000" x2="30480000"/>
+   <centre x="-4318000" y="-1524000"/>
    <origin x="0" y="0"/>
   </editor>
  </MODULE>
@@ -31,6 +31,7 @@
      <ITEM name="Message Column Width">661</ITEM>
      <ITEM name="ShowGrid">No</ITEM>
      <ITEM name="Source Column Width">100</ITEM>
+     <ITEM name="Time Column Width">120</ITEM>
      <ITEM name="Version">100</ITEM>
     </PROPERTIES>
    </POPUP>

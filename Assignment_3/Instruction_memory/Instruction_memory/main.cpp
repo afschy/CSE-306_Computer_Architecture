@@ -20,7 +20,15 @@ uint8_t reverse_bits(uint8_t num) {
 }
 
 uint16_t instruction_memory[] = {
-	0x8060, 0x8015, 0x8027, 0xb613, 0xb624, 0x4633, 0x4644, 0xc345
+	0x8072,
+	0x8012,
+	0xf171,
+	0x9036,
+	0x1748,
+	0x5137,
+	0x2040
+
+
 };
 
 int main(void)
@@ -33,6 +41,9 @@ int main(void)
 	DDRA = 0xff;
 	DDRC = 0xff;
 	
+	// D[0] - Stack Toggle
+	// DDRD = 0xff;
+	
 	uint8_t pc = -1, top_8_bits, bottom_8_bits;
 	uint16_t instruction;
     while (1) 
@@ -44,6 +55,11 @@ int main(void)
 		top_8_bits = reverse_bits(uint8_t(instruction >> 8));
 		PORTA = top_8_bits;
 		PORTC = bottom_8_bits;
+		/*PORTD = 0;
+		
+		if(((instruction&0xf000) == 0x4000) || ((instruction&0xf000) == 0xb000)) {
+			if((instruction&0x0f00) == 0x0600) PORTD = 1;
+		}*/
 		_delay_ms(50);
     }
 }
